@@ -1,6 +1,15 @@
 # Input variable definitions
+variable "id" {
+  description = "The ID of your project - usually a defining set of numbers or an ID"
+  type = string
+}
+
+variable "env" {
+  description = "The environment - usually dev or prod or test"
+}
+
 variable "location" {
-  description = "The Azure Region in which all resources groups should be created."
+  description = "The Azure Region in which all resources should be created."
   type        = string
 }
 variable "resource_group_name" {
@@ -9,12 +18,12 @@ variable "resource_group_name" {
 }
 
 variable "vnet_name" {
-  description = "The name of the VNet"
+  description = "The name of the VNet - preexisting vnet name, entered here"
   type        = string
 }
 
 variable "subnet_name" {
-  description = "The name of the Subnet"
+  description = "The name of the Subnet - preexisting subnet name, entered here"
   type        = string
 }
 variable "storage_account_name" {
@@ -31,13 +40,5 @@ variable "storage_account_replication_type" {
 }
 variable "storage_account_kind" {
   description = "Storage Account Kind"
-  type        = string
-}
-variable "static_website_index_document" {
-  description = "static website index document"
-  type        = string
-}
-variable "static_website_error_404_document" {
-  description = "static website error 404 document"
   type        = string
 }
